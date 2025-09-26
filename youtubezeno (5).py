@@ -465,23 +465,23 @@ class SEA(BaseBot):
                         pass
                         
         if message.lower() == "no":
-            if user.username == "_M.O.R.O_" or user.username in ownerz:
+            if user.username == "B_L_A_C_K_7" or user.username in ownerz:
                 if user.username in self.choices:
                     await self.highrise.send_whisper(user.id, "Cancelled operation.")
                     del self.choices[user.username]
         
         if message.lower() == "yes":
-            if user.username == "_M.O.R.O_" or user.username in ownerz:
+            if user.username == "B_L_A_C_K_7" or user.username in ownerz:
                 if user.username in self.choices:
                     new_bitrate = self.choices[user.username]
                     self.bitrate = new_bitrate
                     await self.highrise.chat(f"Successfully updated audio bitrate to {new_bitrate}.")
                     del self.choices[user.username]
         
-        if message.startswith("/cbit") and (user.username == "_M.O.R.O_" or user.username in ownerz):
+        if message.startswith("/cbit") and (user.username == "B_L_A_C_K_7" or user.username in ownerz):
             await self.highrise.send_whisper(user.id, f"Currently audio is being broadcasted at {self.bitrate}bps.")
         
-        if message.startswith("/bitrate ") and (user.username == "_M.O.R.O_" or user.username in ownerz):
+        if message.startswith("/bitrate ") and (user.username == "B_L_A_C_K_7" or user.username in ownerz):
             parts = message.split(" ")
             if len(parts) > 1:
                 if parts[1].endswith("k") and parts[1][:-1].isdigit():
@@ -729,7 +729,7 @@ class SEA(BaseBot):
                 print(f"Error in /queue command: {e}")
                 await self.highrise.send_whisper(user.id, "Error checking the queue.")
                 
-        if message.startswith("/info ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/info ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 info = message.split(" ", 1)[1]
                 infol = info.replace("@", "")
@@ -775,7 +775,7 @@ class SEA(BaseBot):
                 except:
                     pass
                 
-        if message.startswith("/vipz") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/vipz") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 if vip_users:
                     message_content = ""
@@ -794,7 +794,7 @@ class SEA(BaseBot):
                 print(f"Error in /vipz command: {e}")
                 await self.highrise.send_whisper(user.id, "Error checking the queue.")
         
-        if message.startswith("/remv ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/remv ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 current_date = datetime.now().strftime("%d/%m/%Y")
                 remvip = message.split(" ", 1)[1]
@@ -815,7 +815,7 @@ class SEA(BaseBot):
             except:
                 pass
                 
-        if message.startswith("/addv ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/addv ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 current_date = datetime.now().strftime("%d/%m/%Y")
                 vip = message.split(" ", 1)[1]
@@ -853,7 +853,7 @@ class SEA(BaseBot):
             except Exception as e:
                 print(f"An error occurred: {e}")
 
-        if message.startswith("/give") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/give") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 _, username, value = message.split(" ", 2)
                 username = username.strip("@")
@@ -866,7 +866,7 @@ class SEA(BaseBot):
             except Exception as e:
                 print(f"An error occurred: {e}")
 
-        if message.startswith("/rfav ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/rfav ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 parts = message.split(" ")
                 if len(parts) > 1 and parts[1].isdigit():
@@ -908,7 +908,7 @@ class SEA(BaseBot):
                 print(f"Error in /flist command: {e}")
                 await self.highrise.send_whisper(user.id, "Error checking the queue.")
 
-        if message.startswith("/fav") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/fav") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 if self.now:
                     fav = self.now[0]
@@ -933,7 +933,7 @@ class SEA(BaseBot):
                 print("Error in /fav command:", e)
 
         if message.startswith("/cfav"):
-            if user.username in ownerz or user.username == "_M.O.R.O_":
+            if user.username in ownerz or user.username == "B_L_A_C_K_7":
                 if playlist:
                     for item in playlist:
                         if os.path.exists(item['url']):
@@ -948,7 +948,7 @@ class SEA(BaseBot):
             else:
                 await self.highrise.send_whisper(user.id, "You dont have access to this command.")
 
-        if message.startswith("/cmsg") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/cmsg") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 if msg:
                     msg.clear()
@@ -958,7 +958,7 @@ class SEA(BaseBot):
             except:
                 print("Error in /cmsg:", e)
 
-        if message.startswith("/rmsg ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/rmsg ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 user = message.split(" ", 1)[1]
                 username = user.replace("@", "")
@@ -979,7 +979,7 @@ class SEA(BaseBot):
             except Exception as e:
                     print("Error in /rmsg:", e)
 
-        if message.startswith("/msg ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/msg ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 user = message.split(" ", 1)[1]
                 username = user.replace("@", "")
@@ -1074,7 +1074,7 @@ class SEA(BaseBot):
             except Exception as e:
                 print("Error in /accs:", e)
 
-        if message.startswith("/withdraw ") and (user.username in ownerz or user.username == "_M.O.R.O_"):
+        if message.startswith("/withdraw ") and (user.username in ownerz or user.username == "B_L_A_C_K_7"):
             try:
                 parts = message.split(" ")
                 if len(parts) != 2:
