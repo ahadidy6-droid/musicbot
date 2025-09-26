@@ -464,23 +464,23 @@ class SEA(BaseBot):
                         pass
                         
         if message.lower() == "no":
-            if user.username == "_M.O.R.O_" or user.username in ownerz:
+            if user.username == "B_L_A_C_K_7" or user.username in ownerz:
                 if user.username in self.choices:
                     await self.highrise.send_whisper(user.id, "Cancelled operation.")
                     del self.choices[user.username]
         
         if message.lower() == "yes":
-            if user.username == "_M.O.R.O_" or user.username in ownerz:
+            if user.username == "B_L_A_C_K_7" or user.username in ownerz:
                 if user.username in self.choices:
                     new_bitrate = self.choices[user.username]
                     self.bitrate = new_bitrate
                     await self.highrise.chat(f"Successfully updated audio bitrate to {new_bitrate}.")
                     del self.choices[user.username]
         
-        if message.startswith("/cbit") and (user.username == "_M.O.R.O_" or user.username in ownerz):
+        if message.startswith("/cbit") and (user.username == "B_L_A_C_K_7" or user.username in ownerz):
             await self.highrise.send_whisper(user.id, f"Currently audio is being broadcasted at {self.bitrate}bps.")
         
-        if message.startswith("/bitrate ") and (user.username == "_M.O.R.O_" or user.username in ownerz):
+        if message.startswith("/bitrate ") and (user.username == "B_L_A_C_K_7" or user.username in ownerz):
             parts = message.split(" ")
             if len(parts) > 1:
                 if parts[1].endswith("k") and parts[1][:-1].isdigit():
@@ -494,7 +494,7 @@ class SEA(BaseBot):
             else:
                 await self.highrise.send_whisper(user.id, "Invalid command, usage: /bitrate [number]k\nExample: /bitrate 128k")
         
-        if message == "/restart" and (user.username == "_M.O.R.O_" or user.username in ownerz):
+        if message == "/restart" and (user.username == "B_L_A_C_K_7" or user.username in ownerz):
             try:
                 await self.highrise.send_whisper(user.id, "Restarting the bot...")
                 await self.restart_bot()
