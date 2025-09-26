@@ -1,0 +1,9 @@
+psutil
+yt-dlp
+aiohttp
+aiofiles
+mutagen
+attrs
+click
+quattro
+pkg_resources
